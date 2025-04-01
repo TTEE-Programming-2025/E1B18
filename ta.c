@@ -21,3 +21,16 @@ int main(void) {
 
     system("pause"); // 暫停，等待使用者按鍵
     system("CLS");   // 清除螢幕
+    
+    int password;
+    printf("請輸入 4 位數密碼： ");
+    scanf("%d", &password);
+
+    if (password == password) {
+        printf("歡迎帥哥美女進入系統！\n");
+    } else {
+        printf("密碼錯誤！\a\n"); // \a 產生警告聲
+    }
+    
+    system("pause");// 暫停，等待使用者按鍵
+    system("CLS");// 清除螢幕
