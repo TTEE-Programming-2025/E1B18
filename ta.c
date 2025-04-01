@@ -34,3 +34,11 @@ int main(void) {
     
     system("pause");// 暫停，等待使用者按鍵
     system("CLS");// 清除螢幕
+    
+    printf("輸入A到Z將會得到:Uppercase\n");
+    printf("輸入a到z將會得到:Lowercase\n");
+    printf("輸入0到9將會得到:Digit\n");
+    printf("其他字元則顯示:你的名稱\n");
+    
+    system("pause");// 暫停，等待使用者按鍵
+    system("CLS");// 清除螢幕
