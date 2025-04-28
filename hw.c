@@ -48,6 +48,19 @@
  			}
  		}
  	}
+ 	//畫出主選單
+ 	char choice,c,l;
+ 	int j,k;
+ 	while (1) 
+ 	{
+         system("CLS"); // 清除畫面
+         printf("=====================\n");
+         printf("| a. 畫直角三角形     |\n");
+         printf("| b. 顯示乘法表       |\n");
+         printf("| c. 結束             |\n");
+         printf("=====================\n");
+         printf("請輸入選項(a/b/c)：");
+    }
  	 	system("pause");
      return 0;
  }
