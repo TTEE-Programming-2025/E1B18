@@ -60,7 +60,8 @@
          printf("| c. 結束             |\n");
          printf("=====================\n");
          printf("請輸入選項(a/b/c)：");
-     choice = getch();
+ 
+         choice = getch();
          printf("%c\n", choice);
  
          if (choice == 'a' || choice == 'A') 
@@ -84,7 +85,61 @@
  			{
                  printf("輸入錯誤，請重新輸入！\n");
                  getch();
-             }}
- 	 	system("pause");
+             }
+ 
+         } 
+ 		else if (choice=='b'||choice=='B') 
+ 		{
+             system("CLS");
+             int n;
+             printf("請輸入 1 到 9 的整數：");
+             scanf("%d", &n);
+ 
+             if (n>=1&&n<= 9) 
+ 			{
+                 for (j=1;j<=n;j++) 
+ 				{
+                     for (k=1;k<=n;k++) 
+ 					{
+                         printf("%d*%d=%2d ", j,k,j*k);
+                     }
+                     printf("\n");
+                 }system("pause");
+             } 
+ 			else 
+ 			{
+                 printf("輸入錯誤，請重新輸入！\n");
+                 getch();
+             }
+ 
+         } 
+ 		else if (choice=='c'||choice=='C') 
+ 		{
+             char confirm;
+             printf("Continue? (y/n)：");
+             confirm = getch();
+             printf("%c\n", confirm);
+ 
+             if (confirm=='y'||confirm=='Y') 
+ 			{
+                 continue; // 回到主選單
+             } else if (confirm=='n'||confirm=='N') 
+ 			{
+                 printf("結束程式。\n");
+                 break; // 結束
+             } else 
+ 			{
+                 printf("輸入錯誤，請重新輸入！\n");
+                 getch();
+             }
+         } 
+ 		else 
+ 		{
+             printf("無效的選項，請重新輸入！\n");
+             getch();
+         }
+     }
+ 	system("pause");
      return 0;
- }}
+ }
+ 
