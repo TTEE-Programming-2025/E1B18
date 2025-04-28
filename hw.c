@@ -60,7 +60,31 @@
          printf("| c. 結束             |\n");
          printf("=====================\n");
          printf("請輸入選項(a/b/c)：");
-    }
+     choice = getch();
+         printf("%c\n", choice);
+ 
+         if (choice == 'a' || choice == 'A') 
+ 		{
+             system("CLS");
+             char end_char;
+             printf("請輸入一個從 'a' 到 'n' 的字母：");
+             scanf(" %c", &end_char);
+ 
+             if (end_char>='a'&&end_char<='n') 
+ 			{
+                 for (c='a'; c<=end_char;c++) 
+ 				{
+                     for (l='a';l<=c;l++) 
+ 					{
+                         printf("%c ",l);
+                     }
+                     printf("\n");
+                 }system("pause");
+             } else 
+ 			{
+                 printf("輸入錯誤，請重新輸入！\n");
+                 getch();
+             }}
  	 	system("pause");
      return 0;
- }
+ }}
