@@ -60,7 +60,100 @@ int main(void)
         printf("d. Exit\n");
         printf("----------------------------------\n");
         printf("請選擇：");
-        scanf(" %c", &choice);}
+        scanf(" %c", &choice);
+         if (choice == 'a') {
+            printf(" 123456789\n");
+            for (i = 8; i >= 0; i--) {
+                printf("%d", i + 1);
+                for (j = 0; j < 9; j++) {
+                    if (seats[i][j] == 0) printf("-");
+                    else if (seats[i][j] == 1) printf("*");
+                    else if (seats[i][j] == 2) printf("@");
+                }
+                printf("\n");
+            }
+        }
+         else if (choice == 'b') {
+            int need;
+            printf("需要幾個座位？(1~4)：");
+            scanf("%d", &need);
+            if (need < 1 || need > 4) {
+                printf("數量不合法。\n");
+                continue;
+            }
+
+            int found = 0;
+            for (i = 0; i < 9 && found == 0; i++) {
+                for (j = 0; j <= 9 - need; j++) {
+                    int ok = 1;
+                    for (k = 0; k < need; k++) {
+                        if (seats[i][j + k] != 0) {
+                            ok = 0;
+                            break;
+                        }
+                    }
+                    if (ok) {
+                        for (k = 0; k < need; k++)
+                            seats[i][j + k] = 2;
+                        found = 1;
+                        break;
+                    }
+                }
+            }
+
+            if (!found) {
+                printf("找不到連續座位。\n");
+                continue;
+            }
+
+            printf(" 123456789\n");
+            for (i = 8; i >= 0; i--) {
+                printf("%d", i + 1);
+                for (j = 0; j < 9; j++) {
+                    if (seats[i][j] == 0) printf("-");
+                    else if (seats[i][j] == 1) printf("*");
+                    else if (seats[i][j] == 2) printf("@");
+                }
+                printf("\n");
+            }
+
+            char ok;
+            printf("是否滿意這些座位？(y/n)：");
+            scanf(" %c", &ok);
+            for (i = 0; i < 9; i++) {
+                for (j = 0; j < 9; j++) {
+                    if (seats[i][j] == 2) {
+                        if (ok == 'y') seats[i][j] = 1;
+                        else seats[i][j] = 0;
+                    }
+                }
+            }
+        }
+        else if (choice == 'c') {
+            int col, row;
+            printf("請輸入座位（列-行，例如 3-5）：");
+            scanf("%d-%d", &col, &row);
+            if (col < 1 || col > 9 || row < 1 || row > 9) {
+                printf("超出範圍。\n");
+                continue;
+            }
+            if (seats[row - 1][col - 1] != 0) {
+                printf("此座位已被預訂。\n");
+                continue;
+            }
+            seats[row - 1][col - 1] = 1;
+
+            printf(" 123456789\n");
+            for (i = 8; i >= 0; i--) {
+                printf("%d", i + 1);
+                for (j = 0; j < 9; j++) {
+                    if (seats[i][j] == 0) printf("-");
+                    else if (seats[i][j] == 1) printf("*");
+                    else if (seats[i][j] == 2) printf("@");
+                }
+                printf("\n");
+            }
+        }
 
     
 	
@@ -90,7 +183,7 @@ int main(void)
 	
 	
 	
-	
+}
 	system("pause");
 	return 0;
 }
