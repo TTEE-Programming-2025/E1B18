@@ -61,7 +61,8 @@ int main(void)
         printf("----------------------------------\n");
         printf("請選擇：");
         scanf(" %c", &choice);
-         if (choice == 'a') {
+        
+         if (choice == 'a') {//選擇A 
             printf(" 123456789\n");
             for (i = 8; i >= 0; i--) {
                 printf("%d", i + 1);
@@ -73,7 +74,7 @@ int main(void)
                 printf("\n");
             }
         }
-         else if (choice == 'b') {
+         else if (choice == 'b') {//選擇B 
             int need;
             printf("需要幾個座位？(1~4)：");
             scanf("%d", &need);
@@ -129,7 +130,7 @@ int main(void)
                 }
             }
         }
-        else if (choice == 'c') {
+        else if (choice == 'c') {//選擇C 
             int col, row;
             printf("請輸入座位（列-行，例如 3-5）：");
             scanf("%d-%d", &col, &row);
@@ -154,36 +155,22 @@ int main(void)
                 printf("\n");
             }
         }
+         
+        else if (choice == 'd') {// 離開或繼續
+            char again;
+            printf("Continue? (y/n)：");
+            scanf(" %c", &again);
+            if (again == 'y') continue;
+            else {
+                printf("感謝使用，再見！\n");
+                break;
+            }
+        }
 
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
-	system("pause");
+        else {
+            printf("無效選項。\n");
+        }
+    }
+    system("pause");
 	return 0;
 }
