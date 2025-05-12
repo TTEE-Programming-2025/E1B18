@@ -50,6 +50,47 @@ int main(void)
 	for (i = 0; i < 9; i++)
         for (j = 0; j < 9; j++)
             seats[i][j] = 0;
-            	system("pause");
+            
+    char choice;
+    while (1) {
+        printf("\n---------[Booking System]---------\n");
+        printf("a. Available seats\n");
+        printf("b. Arrange for you\n");
+        printf("c. Choose by yourself\n");
+        printf("d. Exit\n");
+        printf("----------------------------------\n");
+        printf("½Ð¿ï¾Ü¡G");
+        scanf(" %c", &choice);}
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	system("pause");
 	return 0;
 }
