@@ -1,10 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
-  
-int main(void) {
-	int password, i, attempts = 0;
-    
-    
+#include <string.h>
+
+#define MAX 10
+
+
+typedef struct {
+    char name[20];
+    char id[7];  
+    int math;
+    int physics;
+    int english;
+    float avg;
+} Student;
+
+Student students[MAX];
+int n = 0;
+
+
+void enterGrades();
+void displayGrades();
+void searchStudent();
+void gradeRanking();
+void clearScreen();
+
+int main() {
+
+    int password, i, attempts = 0;
+            
     printf("        *****     *****        \n");
     printf("      ********* *********      \n");
     printf("    ***********************    \n");
@@ -19,8 +42,10 @@ int main(void) {
     printf("            *******            \n");
     printf("              ***              \n");
     printf("               *               \n");
-    
+
+
     while (attempts < 3) {
+       
         printf("½Ð¿é¤J±K½X(hint:2025): ");
         scanf("%d", &password);
         if (password == 2025) {
@@ -37,6 +62,12 @@ int main(void) {
             }
         }
     }
+    } 
+    
+
+    
 
 
-}
+
+
+
