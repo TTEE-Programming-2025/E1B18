@@ -62,7 +62,24 @@ int main() {
             }
         }
     }
-    } 
+   
+        printf("-----------[Grade System]------------\n");
+        printf("a. Enter student grades\n");
+        printf("b. Display student grades\n");
+        printf("c. Search for student grades\n");
+        printf("d. Grade ranking\n");
+        printf("e. Exit system\n");
+        printf("-------------------------------------\n");
+        printf("Enter your choice: ");
+        return 0;
+
+       
+    }
+
+    
+
+
+
     
 
     
